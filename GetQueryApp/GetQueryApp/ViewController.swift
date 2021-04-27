@@ -11,10 +11,13 @@ class ViewController: UIViewController {
         postIDTextField.delegate = self
     }
     
-    //TODO: May be Need to prevent enetering 00, 01, 02 ... 09
     @IBAction func showPostButtonDidTap(_ sender: UIButton) {
-        print("🟢 ShowPostButtonDidTap")
-        getPosts(with: "10")
+        guard let text = postIDTextField.text else { return }
+        var postID = text
+        if postID.count == 2 && postID.first == "0" {
+            postID.remove(at: postID.startIndex)
+        }
+        getPosts(with: postID)
     }
 }
 
@@ -45,8 +48,8 @@ private extension ViewController {
                   let dataString = String(data: data, encoding: .utf8),
                   (response as? HTTPURLResponse)?.statusCode == 200,
                   error == nil else { return }
-            //self.postTextView.text = dataString
-            print(dataString)
+//            self.postTextView.text = dataString
+            print("🟢 \(dataString)")
         }
         task.resume()
     }
