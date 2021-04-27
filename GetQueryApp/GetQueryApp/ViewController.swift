@@ -13,28 +13,9 @@ class ViewController: UIViewController {
     
     @IBAction func showPostButtonDidTap(_ sender: UIButton) {
         print("🟢 ShowPostButtonDidTap")
-        getPosts()
+        getPosts(with: "10")
     }
     
-    func getPosts() {
-        
-        let url = URL(string: "https://jsonplaceholder.typicode.com/posts")
-        
-        guard let requestUrl = url else { return }
-        var request = URLRequest(url: requestUrl)
-        request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data,
-                  let dataString = String(data: data, encoding: .utf8),
-                  (response as? HTTPURLResponse)?.statusCode == 200,
-                  error == nil else { return }
-//            self.postTextView.text = dataString
-            print(dataString)
-        }
-        task.resume()
-    }
 }
 
 //TODO: May be Need to prevent enetering 00, 01, 02 ... 09
@@ -48,5 +29,35 @@ extension ViewController: UITextFieldDelegate {
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
         return updatedText.count <= 2
+    }
+}
+
+private extension ViewController {
+    
+    func getPosts(with ID: String) {
+        let baseUrl = URL(string: "https://jsonplaceholder.typicode.com/comments")
+        let endPoint = "?postId=\(ID)"
+        
+        guard let base = baseUrl else { return }
+        
+        let url = "\(base)\(endPoint)"
+        
+        let requestUrl = URL(string: url)
+        
+        guard let unwrRequestUrl = requestUrl else { return }
+        
+        var request = URLRequest(url: unwrRequestUrl)
+        request.httpMethod = "GET"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data,
+                  let dataString = String(data: data, encoding: .utf8),
+                  (response as? HTTPURLResponse)?.statusCode == 200,
+                  error == nil else { return }
+            //self.postTextView.text = dataString
+            print(dataString)
+        }
+        task.resume()
     }
 }
