@@ -42,8 +42,8 @@
                                         <viewLayoutGuide key="contentLayoutGuide" id="cqu-4p-F04"/>
                                         <viewLayoutGuide key="frameLayoutGuide" id="Zw3-fv-Nsd"/>
                                     </scrollView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter post Id" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAa-YU-JU0">
-                                        <rect key="frame" x="104.66666666666666" y="225" width="145" height="50"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter post ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAa-YU-JU0">
+                                        <rect key="frame" x="104" y="225" width="146" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="145" id="oaZ-Zq-Zic"/>
                                             <constraint firstAttribute="height" constant="50" id="qoG-AT-47Y"/>
@@ -58,7 +58,7 @@
                                             <constraint firstAttribute="height" constant="50" id="f9C-nr-uac"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <state key="normal" title="Show Post JASON"/>
+                                        <state key="normal" title="Show Post JSON"/>
                                         <connections>
                                             <action selector="showPostButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZMS-ht-O4n"/>
                                         </connections>

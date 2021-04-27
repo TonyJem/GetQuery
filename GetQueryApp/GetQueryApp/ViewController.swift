@@ -11,17 +11,16 @@ class ViewController: UIViewController {
         postIDTextField.delegate = self
     }
     
+    //TODO: May be Need to prevent enetering 00, 01, 02 ... 09
     @IBAction func showPostButtonDidTap(_ sender: UIButton) {
         print("🟢 ShowPostButtonDidTap")
         getPosts(with: "10")
     }
-    
 }
 
-//TODO: May be Need to prevent enetering 00, 01, 02 ... 09
 extension ViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard CharacterSet(charactersIn: "1234567890").isSuperset(of: CharacterSet(charactersIn: string)) else {
+        guard CharacterSet(charactersIn: "0123456789").isSuperset(of: CharacterSet(charactersIn: string)) else {
             return false
         }
         let currentText = textField.text ?? ""
@@ -33,20 +32,11 @@ extension ViewController: UITextFieldDelegate {
 }
 
 private extension ViewController {
-    
     func getPosts(with ID: String) {
-        let baseUrl = URL(string: "https://jsonplaceholder.typicode.com/comments")
-        let endPoint = "?postId=\(ID)"
+        let url = URL(string: "https://jsonplaceholder.typicode.com/comments?postId=\(ID)")
         
-        guard let base = baseUrl else { return }
-        
-        let url = "\(base)\(endPoint)"
-        
-        let requestUrl = URL(string: url)
-        
-        guard let unwrRequestUrl = requestUrl else { return }
-        
-        var request = URLRequest(url: unwrRequestUrl)
+        guard let requestUrl = url else { return }
+        var request = URLRequest(url: requestUrl)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
