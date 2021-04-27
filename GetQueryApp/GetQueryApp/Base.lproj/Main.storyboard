@@ -49,7 +49,7 @@
                                             <constraint firstAttribute="height" constant="50" id="qoG-AT-47Y"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vaz-dA-WPc">
                                         <rect key="frame" x="92" y="340" width="170" height="50"/>
@@ -59,6 +59,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <state key="normal" title="Show Post JASON"/>
+                                        <connections>
+                                            <action selector="showPostButtonDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZMS-ht-O4n"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -78,6 +81,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MUL-gN-bm5" secondAttribute="bottom" constant="45" id="mWh-8b-cQt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="postIDTextField" destination="AAa-YU-JU0" id="T0c-NE-9Ig"/>
+                        <outlet property="postTextView" destination="yvx-Rf-aRr" id="BTb-j4-L3Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
