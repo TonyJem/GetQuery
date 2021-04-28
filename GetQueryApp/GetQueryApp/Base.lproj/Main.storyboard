@@ -71,6 +71,19 @@
                                     <constraint firstAttribute="height" constant="390" id="tpB-Mf-DyT"/>
                                 </constraints>
                             </stackView>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9W-bi-vPj">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Fcm-S1-kuA">
+                                        <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Fcm-S1-kuA" firstAttribute="centerX" secondItem="f9W-bi-vPj" secondAttribute="centerX" id="MoT-6z-Mof"/>
+                                    <constraint firstItem="Fcm-S1-kuA" firstAttribute="centerY" secondItem="f9W-bi-vPj" secondAttribute="centerY" id="kwE-wD-g3Z"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -78,10 +91,16 @@
                             <constraint firstItem="MUL-gN-bm5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Cv2-ZW-uo7"/>
                             <constraint firstItem="MUL-gN-bm5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="Jm7-5r-EnP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MUL-gN-bm5" secondAttribute="trailing" constant="30" id="K1c-Dw-B5N"/>
+                            <constraint firstItem="f9W-bi-vPj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="T2O-tV-6C1"/>
+                            <constraint firstAttribute="bottom" secondItem="f9W-bi-vPj" secondAttribute="bottom" id="eU2-iW-D80"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MUL-gN-bm5" secondAttribute="bottom" constant="45" id="mWh-8b-cQt"/>
+                            <constraint firstItem="f9W-bi-vPj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qLj-DI-E78"/>
+                            <constraint firstItem="f9W-bi-vPj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="siS-dH-Dhb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Fcm-S1-kuA" id="lak-FA-chl"/>
+                        <outlet property="indicatorView" destination="f9W-bi-vPj" id="eBT-ub-8Eh"/>
                         <outlet property="postIDTextField" destination="AAa-YU-JU0" id="T0c-NE-9Ig"/>
                         <outlet property="postTextView" destination="yvx-Rf-aRr" id="BTb-j4-L3Q"/>
                     </connections>
