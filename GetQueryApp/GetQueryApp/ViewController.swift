@@ -12,16 +12,11 @@ class ViewController: UIViewController {
         }
     }
     
-    private var session: URLSession {
-        let configuration = URLSessionConfiguration.default
-        return URLSession(configuration: configuration)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        indicatorView.isHidden = true
         postTextView.text = ""
+        indicatorView.isHidden = true
         postIDTextField.delegate = self
     }
     
@@ -33,7 +28,7 @@ class ViewController: UIViewController {
             postIDTextField.text = postID
         }
         turnActivityIndicatorON()
-        getPosts(with: postID)
+        fetchPosts(with: postID)
     }
 }
 
@@ -52,7 +47,7 @@ extension ViewController: UITextFieldDelegate {
 }
 
 private extension ViewController {
-    func getPosts(with ID: String) {
+    func fetchPosts(with ID: String) {
         let url = URL(string: "https://jsonplaceholder.typicode.com/comments?postId=\(ID)")
         
         guard let requestUrl = url else {
@@ -69,7 +64,8 @@ private extension ViewController {
                       (response as? HTTPURLResponse)?.statusCode == 200,
                       error == nil else {
                     self.turnActivityIndicatorOFF()
-                    return }
+                    return
+                }
                 self.turnActivityIndicatorOFF()
                 self.respondedData = dataString
             }
