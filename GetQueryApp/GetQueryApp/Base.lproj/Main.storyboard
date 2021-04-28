@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="MUL-gN-bm5">
-                                <rect key="frame" x="30" y="89" width="354" height="390"/>
+                                <rect key="frame" x="30" y="89" width="354" height="728"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0L-1p-obp">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="160"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="498"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yvx-Rf-aRr">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="160"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="498"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                                 <color key="textColor" systemColor="labelColor"/>
@@ -43,7 +43,7 @@
                                         <viewLayoutGuide key="frameLayoutGuide" id="Zw3-fv-Nsd"/>
                                     </scrollView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter post ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AAa-YU-JU0">
-                                        <rect key="frame" x="104" y="225" width="146" height="50"/>
+                                        <rect key="frame" x="104" y="563" width="146" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="145" id="oaZ-Zq-Zic"/>
                                             <constraint firstAttribute="height" constant="50" id="qoG-AT-47Y"/>
@@ -52,7 +52,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vaz-dA-WPc">
-                                        <rect key="frame" x="92" y="340" width="170" height="50"/>
+                                        <rect key="frame" x="92" y="678" width="170" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="1Yk-I7-ENm"/>
                                             <constraint firstAttribute="height" constant="50" id="f9C-nr-uac"/>
@@ -68,14 +68,13 @@
                                     <constraint firstItem="W0L-1p-obp" firstAttribute="leading" secondItem="MUL-gN-bm5" secondAttribute="leading" id="X9C-iv-c58"/>
                                     <constraint firstItem="W0L-1p-obp" firstAttribute="top" secondItem="MUL-gN-bm5" secondAttribute="top" id="YGh-hd-zEn"/>
                                     <constraint firstAttribute="trailing" secondItem="W0L-1p-obp" secondAttribute="trailing" id="hX4-JH-h8n"/>
-                                    <constraint firstAttribute="height" constant="390" id="tpB-Mf-DyT"/>
                                 </constraints>
                             </stackView>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9W-bi-vPj">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Fcm-S1-kuA">
-                                        <rect key="frame" x="188.66666666666666" y="429.66666666666669" width="37" height="37"/>
+                                        <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -93,7 +92,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MUL-gN-bm5" secondAttribute="trailing" constant="30" id="K1c-Dw-B5N"/>
                             <constraint firstItem="f9W-bi-vPj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="T2O-tV-6C1"/>
                             <constraint firstAttribute="bottom" secondItem="f9W-bi-vPj" secondAttribute="bottom" id="eU2-iW-D80"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MUL-gN-bm5" secondAttribute="bottom" constant="45" id="mWh-8b-cQt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MUL-gN-bm5" secondAttribute="bottom" constant="45" id="mWh-8b-cQt"/>
                             <constraint firstItem="f9W-bi-vPj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qLj-DI-E78"/>
                             <constraint firstItem="f9W-bi-vPj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="siS-dH-Dhb"/>
                         </constraints>
