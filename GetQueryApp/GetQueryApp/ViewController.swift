@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         var postID = text
         if postID.count == 2 && postID.first == "0" {
             postID.remove(at: postID.startIndex)
+            postIDTextField.text = postID
         }
         getPosts(with: postID)
     }
